@@ -6,9 +6,11 @@ Screenshot:
 <img width="1464" alt="Screenshot 2024-07-13 at 12 48 02 PM" src="https://github.com/user-attachments/assets/60f390d2-aaf2-420b-ade3-2c44bd1cb943">
 
 User Story
+```
 AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
+```
 
 I have created a weather dashboard with form inputs
 ```
