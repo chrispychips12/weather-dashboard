@@ -6,30 +6,59 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
 h1 {
     text-align: center;
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 0;
+    margin: 0 -20px 20px -20px;
 }
 
 .search-section {
-    display: flex;
-    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
 
-#city-input {
-    width: 60%;
-    padding: 10px;
-    margin-right: 10px;
+.search-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
+
+#city-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+} 
+
+
 
 #search-button {
     padding: 10px 20px;
+    border: none;
+    background-color: #4A90E2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
 }
+
+#search-button:hover {
+    background-color: #357ABD;
+}
+/* Added hover effect on search button */
 
 .weather-section {
     background-color: #fff;
@@ -51,8 +80,33 @@ h1 {
 .forecast-day {
     text-align: center;
     width: 18%;
-    background-color: #e0f7fa;
+    background-color: #4A90E2;
+    color: white;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#search-history {
+    margin-top: 20px;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+#history-list li {
+    background-color: #ccc;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#history-list li:hover {
+    background-color: #bbb;
 }
