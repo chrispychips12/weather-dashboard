@@ -33,3 +33,15 @@ function getWeather(city) {
         });
 }
 
+function displayCurrentWeather(data) { // display current weather using data from API
+    const currentWeather = data.list[0]; // get current weather using list from API
+    const weatherDetails = ` 
+        <p>City: ${data.city.name}</p>
+        <p>Date: ${new Date(currentWeather.dt * 1000).toLocaleDateString()}</p> 
+        <p>Temperature: ${currentWeather.main.temp} °C</p>
+        <p>Humidity: ${currentWeather.main.humidity} %</p>
+        <p>Wind Speed: ${currentWeather.wind.speed} m/s</p>
+    `; // show weather details and add to weatherDetails
+    document.getElementById('current-weather-details').innerHTML = weatherDetails; // display weather details and append to current-weather-details
+}
+
