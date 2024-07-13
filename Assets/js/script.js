@@ -69,3 +69,15 @@ function addToHistory(city) { // function to add city to history section
     }
 }
 
+function displayHistory() { // function to display history
+    const history = JSON.parse(localStorage.getItem('searchHistory')) || [];// get search history from local storage
+    const historyList = history.map(city => `<li>${city}</li>`).join(''); // create history list
+    document.getElementById('history-list').innerHTML = historyList; // display history list and append to history-list
+    document.querySelectorAll('#history-list li').forEach(item => { // add event listener to history list
+        item.addEventListener('click', function () { // on click
+            getWeather(this.textContent); // get weather data for the city
+        });
+    });
+}
+
+displayHistory(); // display history
