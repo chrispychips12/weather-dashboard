@@ -71,11 +71,16 @@ function addToHistory(city) { // function to add city to history section
 
 function displayHistory() { // function to display history
     const history = JSON.parse(localStorage.getItem('searchHistory')) || [];// get search history from local storage
-    const historyList = history.map(city => `<li>${city}</li>`).join(''); // create history list
+    const historyList = history.map(city => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">${city}</h5>
+            </div>
+        </div>`).join(''); // create history list with cards
     document.getElementById('history-list').innerHTML = historyList; // display history list and append to history-list
-    document.querySelectorAll('#history-list li').forEach(item => { // add event listener to history list
+    document.querySelectorAll('#history-list .card').forEach(item => { // add event listener to history list
         item.addEventListener('click', function () { // on click
-            getWeather(this.textContent); // get weather data for the city
+            getWeather(this.querySelector('.card-title').textContent); // get weather data for the city
         });
     });
 }
