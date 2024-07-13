@@ -47,12 +47,12 @@ Some of the features I included in this dashboard are:
 
 
 SOURCES + ACKNOWLEDGEMENTS:
- https://stackoverflow.com/questions/9681080/changing-cursor-to-waiting-in-javascript-jquery 
- https://developer.jboss.org/thread/153657 
- https://css-tricks.com/almanac/properties/c/cursor/ 
- https://www.geeksforgeeks.org/how-to-set-the-cursor-to-wait-in-javascript/  
- https://openweathermap.org/forecast5
- https://developers.google.com/maps/documentation/javascript/get-api-key
- https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys
+- https://stackoverflow.com/questions/9681080/changing-cursor-to-waiting-in-javascript-jquery 
+- https://developer.jboss.org/thread/153657 
+- https://css-tricks.com/almanac/properties/c/cursor/ 
+- https://www.geeksforgeeks.org/how-to-set-the-cursor-to-wait-in-javascript/  
+- https://openweathermap.org/forecast5
+- https://developers.google.com/maps/documentation/javascript/get-api-key
+- https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys
 
 
