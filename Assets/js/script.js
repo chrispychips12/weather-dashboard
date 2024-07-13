@@ -60,3 +60,12 @@ function displayForecast(data) { // function to display forecast
     document.getElementById('forecast-details').innerHTML = forecastDetails; // display forecast details and append to forecast-details
 }
 
+function addToHistory(city) { // function to add city to history section 
+    let history = JSON.parse(localStorage.getItem('searchHistory')) || []; // get search history from local storage
+    if (!history.includes(city)) { // if city is not in history
+        history.push(city); // add city to history
+        localStorage.setItem('searchHistory', JSON.stringify(history)); // set search history to local storage
+        displayHistory(); // display history
+    }
+}
+
