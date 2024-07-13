@@ -38,3 +38,25 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+
+#history-list .card {
+    cursor: pointer;
+}
+
+#history-list .card:hover {
+    cursor: pointer;
+}
+
+/* Add loading cursor to the body */
+/* https://stackoverflow.com/questions/9681080/changing-cursor-to-waiting-in-javascript-jquery */
+/* https://developer.jboss.org/thread/153657 */
+/* https://css-tricks.com/almanac/properties/c/cursor/ */
+/* https://www.geeksforgeeks.org/how-to-set-the-cursor-to-wait-in-javascript/ */ 
+
+body.loading {
+    cursor: progress;
+}
+
+body.loading * {
+    cursor: progress;
+}

@@ -11,6 +11,7 @@ document.getElementById('search-button').addEventListener('click', function () {
 });
 
 function getWeather(city) {
+    document.body.classList.add('loading'); // Add loading cursor
     const apiKey = '8ec6240ebaa16f40c4eac9dff82f8e9b'; // API key
     const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`; // API url
 
@@ -19,22 +20,26 @@ function getWeather(city) {
         .then(data => {
             if (data.length > 0) { // if city is found
                 const { lat, lon } = data[0]; // get latitude and longitude
-                const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`; // API url
+                const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`; 
 
                 fetch(weatherUrl) // get weather data
                     .then(response => response.json()) 
                     .then(data => {
                         displayCurrentWeather(data); // display current weather
                         displayForecast(data); // display forecast
+                        document.body.classList.remove('loading'); // Remove loading cursor
                     });
             } else {
                 alert('City not found'); // if city is not found, show alert
+                document.body.classList.remove('loading'); // Remove loading cursor
             }
+        }).catch(() => {
+            document.body.classList.remove('loading'); // Remove loading cursor in case of error
         });
 }
 
-function displayCurrentWeather(data) { // display current weather using data from API
-    const currentWeather = data.list[0]; // get current weather using list from API
+function displayCurrentWeather(data) { // display current weather using data from API and get current weather using list from API
+    const currentWeather = data.list[0]; 
     const weatherDetails = ` 
         <p>City: ${data.city.name}</p>
         <p>Date: ${new Date(currentWeather.dt * 1000).toLocaleDateString()}</p> 
@@ -56,7 +61,7 @@ function displayForecast(data) { // function to display forecast
                 <p>Wind: ${day.wind.speed} m/s</p>
             </div>
         `;
-    }).join(''); // join forecast details with empty string
+    }).join(''); 
     document.getElementById('forecast-details').innerHTML = forecastDetails; // display forecast details and append to forecast-details
 }
 
@@ -65,7 +70,7 @@ function addToHistory(city) { // function to add city to history section
     if (!history.includes(city)) { // if city is not in history
         history.push(city); // add city to history
         localStorage.setItem('searchHistory', JSON.stringify(history)); // set search history to local storage
-        displayHistory(); // display history
+        displayHistory(); // 
     }
 }
 
@@ -80,9 +85,10 @@ function displayHistory() { // function to display history
     document.getElementById('history-list').innerHTML = historyList; // display history list and append to history-list
     document.querySelectorAll('#history-list .card').forEach(item => { // add event listener to history list
         item.addEventListener('click', function () { // on click
+            document.body.classList.add('loading'); // Add loading cursor
             getWeather(this.querySelector('.card-title').textContent); // get weather data for the city
         });
     });
 }
 
-displayHistory(); // display history
+displayHistory(); 
