@@ -1,7 +1,6 @@
 Weather Dashboard
 
-Deployed Link: 
-
+DEPLOYED LINK https://chrispychips12.github.io/weather-dashboard/
 
 Screenshot:
 <img width="1464" alt="Screenshot 2024-07-13 at 12 48 02 PM" src="https://github.com/user-attachments/assets/60f390d2-aaf2-420b-ade3-2c44bd1cb943">
