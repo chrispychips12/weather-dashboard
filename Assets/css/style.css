@@ -15,4 +15,19 @@ h1 {
     text-align: center;
 }
 
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+}
 
