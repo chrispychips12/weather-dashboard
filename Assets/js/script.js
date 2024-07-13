@@ -45,3 +45,18 @@ function displayCurrentWeather(data) { // display current weather using data fro
     document.getElementById('current-weather-details').innerHTML = weatherDetails; // display weather details and append to current-weather-details
 }
 
+function displayForecast(data) { // function to display forecast
+    const forecastDetails = data.list.slice(1, 6).map(day => { // get forecast details for next 5 days
+        return `
+            <div class="forecast-day">
+                <p>${new Date(day.dt * 1000).toLocaleDateString()}</p>
+                <p><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="weather icon"></p>
+                <p>Temp: ${day.main.temp} °C</p>
+                <p>Humidity: ${day.main.humidity} %</p>
+                <p>Wind: ${day.wind.speed} m/s</p>
+            </div>
+        `;
+    }).join(''); // join forecast details with empty string
+    document.getElementById('forecast-details').innerHTML = forecastDetails; // display forecast details and append to forecast-details
+}
+
